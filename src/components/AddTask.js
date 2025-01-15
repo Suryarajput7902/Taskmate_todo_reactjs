@@ -21,13 +21,14 @@ const AddTask = ({ taskList, setTaskList, task, setTask }) => {
             }
             setTaskList([...taskList, newtask]);
             e.target.task.value = "";
+            setTask({});
         }
 
     }
     return (
         <section className="addTask">
             <form onSubmit={handlesubmit}>
-                <input type="text" name="task" autoComplete="off" placeholder="Add task" maxLength="25" value={task.name} onChange={e => setTask({ ...task, name: e.target.task.value })} />
+                <input type="text" name="task" autoComplete="off" placeholder="Add task" maxLength="25" value={task.name} onChange={e => setTask({ ...task, name: e.target.value })} />
                 <button type="submit" >Add</button>
             </form>
         </section>
